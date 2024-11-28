@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML de proba para o exercicio 2.2 -->
+<centro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="exercicio2_2.xsd">
+    <profesor cod_profesor="11111111A">
+        <nombre>Manuel</nombre>
+        <apellido1>Rodríguez</apellido1>
+        <apellido2>Pérez</apellido2>
+        <fecha_incorporacion>2010-09-12</fecha_incorporacion>
+        <modulos>
+            <modulo cod_modulo="MP0372">
+                <titulo>Xestión de Bases de Datos</titulo>
+                <num_horas>187</num_horas>
+                <num_sesiones>7</num_sesiones>
+                <grupo>
+                    <curso>1º</curso>
+                    <ciclo>DAW</ciclo>
+                </grupo>
+                <tutoria>No</tutoria>
+            </modulo>
+            <modulo cod_modulo="MP0373-1">
+                <titulo>Linguaxes de Marcas e Sistemas de Xestión</titulo>
+                <num_horas>133</num_horas>
+                <num_sesiones>5</num_sesiones>
+                <grupo>
+                    <curso>1º</curso>
+                    <ciclo>DAW</ciclo>
+                </grupo>
+                <tutoria>Sí</tutoria>
+            </modulo>
+        </modulos>
+    </profesor>
+
+    <profesor cod_profesor="22222222B">
+        <nombre>Paula</nombre>
+        <apellido1>Martos</apellido1>
+        <apellido2>Méijome</apellido2>
+        <fecha_incorporacion>2017-09-07</fecha_incorporacion>
+        <modulos /> <!-- Sen módulos -->
+    </profesor>
+
+    <profesor cod_profesor="33333333C">
+        <nombre>Rebeca</nombre>
+        <apellido1>Smith</apellido1>
+        <fecha_incorporacion>2020-09-16</fecha_incorporacion>
+        <modulos>
+            <modulo cod_modulo="MP0373-2">
+                <titulo>Linguaxes de Marcas e Sistemas de Xestión</titulo>
+                <num_horas>133</num_horas>
+                <num_sesiones>5</num_sesiones>
+                <grupo>
+                    <curso>1º</curso>
+                    <ciclo>ASIR</ciclo>
+                </grupo>
+                <tutoria>Sí</tutoria>
+            </modulo>
+        </modulos>
+    </profesor>
+</centro>

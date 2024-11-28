@@ -1,0 +1,83 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="centro">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="profesor" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nombre" type="xs:string" />
+                            <xs:element name="apellido1" />
+                            <xs:element name="apellido2" minOccurs="0"></xs:element>
+                            <xs:element name="fecha_incorporacion" type="xs:date"/>
+                            <xs:element name="modulos">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="modulo" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="titulo" type="xs:string"/>
+                                                    <xs:element name="num_horas" type="xs:positiveInteger"/>
+                                                    <xs:element name="num_sesiones">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:positiveInteger">
+                                                                <xs:minInclusive value="2"/>
+                                                                <xs:maxInclusive value="9"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                    <xs:element name="grupo" type="tipoGrupo"/>
+                                                    <xs:element name="tutoria">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:pattern value="Sí|No"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="cod_modulo"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="cod_profesor" type="cod_profesor" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+
+        <!-- Para indicar que @cod_profesor debe ser único dentro de cada profesor -->
+        <xs:unique name="uniqueCodProfesor">
+            <xs:selector xpath="profesor" />
+            <xs:field xpath="@cod_profesor" />
+        </xs:unique>
+    </xs:element>
+
+    <xs:simpleType name="cod_profesor">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{8}[A-Z]" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="tipoGrupo">
+        <xs:sequence>
+            <xs:element name="curso">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="1º"/>
+                        <xs:enumeration value="2º"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="ciclo">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="DAW|ASIR"></xs:pattern>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>            
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
