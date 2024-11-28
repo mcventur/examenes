@@ -1,4 +1,4 @@
-def cifra_v1(texto):
+def cifra(texto):
     DESPLAZAMIENTO = 5
     alfabeto = ("a","b","c","d","e","f","g","h","i","j","k","l","m",
                 "n","o","p","q","r","s","t","u","v","w","x","y","z")
@@ -10,5 +10,5 @@ def cifra_v1(texto):
         
     return cifrado
 
-print(cifra_v1("marcex"))
+print(cifra("marcex"))
         
