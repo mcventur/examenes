@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- XML de proba para o exercicio 2.2 -->
-<centro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="exercicio2_2.xsd">
+<centro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="exercicio2_2a.xsd">
     <profesor cod_profesor="11111111A">
         <nombre>Manuel</nombre>
         <apellido1>Rodríguez</apellido1>
