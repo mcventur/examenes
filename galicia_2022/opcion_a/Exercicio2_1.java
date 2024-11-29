@@ -8,6 +8,7 @@ public class Exercicio2_1 {
         String[] alfabeto = {"a","b","c","d","e","f","g","h","i","j","k","l",
         "m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
 
+        //Lo pasamos a lista porque admiten el método indexOf
         List<String> listaAlfabeto = Arrays.asList(alfabeto);
 
         String cifrado = "";
